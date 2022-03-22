@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: deploy-key-dzsak-stack-test
+  namespace: flux-system
+stringData:
+  identity: |
+    -----BEGIN PRIVATE KEY-----
+    MC4CAQAwBQYDK2VwBCIEIPRS131BeZbNcE+IWDvIRsXQZCTw8lWEpMzkXKN2y60X
+    -----END PRIVATE KEY-----
+  identity.pub: |
+    ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC5pBVT2iWBejZkhaRTK+VMJKg8Dcap/GAzUHnPW2CRS
+  known_hosts: |
+    github.com ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEmKSENjQEezOmxkZMy7opKgwFB9nkt5YRrYMjNuG5N87uRgg6CLrbo5wAdT/y6v0mKV0U2w0WZ2YB/++Tpockg=
