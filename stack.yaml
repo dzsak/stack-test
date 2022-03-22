@@ -1,6 +1,6 @@
 ---
 stack:
-  repository: https://github.com/gimlet-io/gimlet-stack-reference.git?branch=main
+  repository: https://github.com/gimlet-io/gimlet-stack-reference.git?branch=enhancement/update-version
 config:
   certManager:
     email: adam@gimlet.io
@@ -17,6 +17,8 @@ config:
   loki:
     enabled: true
     persistence: true
+    storage:
+      retentionDays: 1
   nginx:
     enabled: true
     host: adam.dzsak
@@ -24,6 +26,8 @@ config:
     enabled: true
   prometheus:
     enabled: true
+    grafanaCloud:
+      enabled: true
     persistence: true
   sealedSecrets:
     enabled: true

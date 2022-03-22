@@ -10,7 +10,7 @@ spec:
   chart:
     spec:
       chart: prometheus
-      version: 14.11.1
+      version: 15.5.3
       sourceRef:
         kind: HelmRepository
         name: prometheus
@@ -32,6 +32,18 @@ spec:
       retention: "14d"
       global:
         scrape_interval: 15s
-        
-      
+        external_labels:
+          cluster:  <no value>
+          # https://grafana.com/docs/grafana-cloud/metrics-prometheus/#sending-data-from-multiple-high-availability-prometheus-instances
+          __replica__: replica1
+      remoteWrite:
+        - url: <no value>
+          basic_auth:
+            username: <no value>
+            password: <no value>
+          write_relabel_configs:
+          - source_labels:
+            - "__name__"
+            regex: "node_load1|node_cpu_seconds_total|node_filesystem_free_bytes|node_time_seconds|node_network_transmit_bytes_total|node_network_receive_bytes_total|node_disk_reads_completed_total|node_disk_writes_completed_total|node_disk_written_bytes_total|node_disk_read_bytes_total|node_disk_io_time_weighted_seconds_total|node_filesystem_avail_bytes|node_filesystem_size_bytes|node_boot_time_seconds|node_memory_MemAvailable_bytes|node_memory_MemTotal_bytes|kube_pod_container_resource_requests|kube_node_status_capacity|kube_pod_container_status_restarts_total|kubelet_volume_stats_used_bytes|kubelet_volume_stats_capacity_bytes|container_memory_working_set_bytes|kube_pod_labels|container_cpu_usage_seconds_total|container_network_transmit_bytes_total|container_network_receive_bytes_total"
+            action: "keep"
     extraScrapeConfigs: |-
