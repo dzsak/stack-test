@@ -32,4 +32,6 @@ spec:
       retention: "14d"
       global:
         scrape_interval: 15s
+        
+      
     extraScrapeConfigs: |-

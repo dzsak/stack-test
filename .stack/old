@@ -1,9 +1,16 @@
 ---
 stack:
-  repository: https://github.com/gimlet-io/gimlet-stack-reference.git?tag=v0.11.0
+  repository: https://github.com/gimlet-io/gimlet-stack-reference.git?branch=main
 config:
   certManager:
     email: adam@gimlet.io
+    enabled: true
+  civo:
+    enabled: true
+    host: adam.dzsak
+  externalSecrets:
+    enabled: true
+  grafanaCloud:
     enabled: true
   kyverno:
     enabled: true
@@ -13,6 +20,8 @@ config:
   nginx:
     enabled: true
     host: adam.dzsak
+  oauth2Proxy:
+    enabled: true
   prometheus:
     enabled: true
     persistence: true
