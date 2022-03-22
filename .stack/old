@@ -1,0 +1,23 @@
+---
+stack:
+  repository: https://github.com/gimlet-io/gimlet-stack-reference.git?tag=v0.11.0
+config:
+  certManager:
+    email: adam@gimlet.io
+    enabled: true
+  kyverno:
+    enabled: true
+  loki:
+    enabled: true
+    persistence: true
+  nginx:
+    enabled: true
+    host: adam.dzsak
+  prometheus:
+    enabled: true
+    persistence: true
+  sealedSecrets:
+    enabled: true
+  tempo:
+    enabled: true
+    sampleTraceData: true
