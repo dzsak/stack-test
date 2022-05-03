@@ -5,31 +5,30 @@ config:
   certManager:
     enabled: false
   civo:
-    enabled: true
+    enabled: false
     host: adam.dzsak
   externalSecrets:
-    enabled: true
+    enabled: false
   grafanaCloud:
-    enabled: true
+    enabled: false
   kyverno:
-    enabled: true
+    enabled: false
   loki:
-    enabled: true
-    persistence: true
+    enabled: false
+    persistence: false
     storage:
       retentionDays: 1
   nginx:
-    enabled: true
     host: adam.dzsak
   oauth2Proxy:
-    enabled: true
+    enabled: false
   prometheus:
-    enabled: true
+    enabled: false
     grafanaCloud:
-      enabled: true
-    persistence: true
+      enabled: false
+    persistence: false
   sealedSecrets:
-    enabled: true
+    enabled: false
   tempo:
-    enabled: true
-    sampleTraceData: true
+    enabled: false
+    sampleTraceData: false
