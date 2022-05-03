@@ -1,10 +1,9 @@
 ---
 stack:
-  repository: https://github.com/gimlet-io/gimlet-stack-reference.git?branch=enhancement/update-version
+  repository: https://github.com/gimlet-io/gimlet-stack-reference.git?branch=main
 config:
   certManager:
-    email: adam@gimlet.io
-    enabled: true
+    enabled: false
   civo:
     enabled: true
     host: adam.dzsak
