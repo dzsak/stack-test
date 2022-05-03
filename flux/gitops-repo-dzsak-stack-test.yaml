@@ -15,9 +15,25 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
+  name: gitops-repo-dzsak-stack-test-dependencies
+  namespace: flux-system
+spec:
+  interval: 24h0m0s
+  path: ./dependencies
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: gitops-repo-dzsak-stack-test
+  validation: client
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
   name: gitops-repo-dzsak-stack-test
   namespace: flux-system
 spec:
+  dependsOn:
+  - name: gitops-repo-dzsak-stack-test-dependencies
   interval: 24h0m0s
   path: ./
   prune: true
