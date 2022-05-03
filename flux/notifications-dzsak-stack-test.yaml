@@ -1,0 +1,22 @@
+apiVersion: notification.toolkit.fluxcd.io/v1beta1
+kind: Provider
+metadata:
+  name: notifications-dzsak-stack-test
+  namespace: flux-system
+spec:
+  address: http://localhost:8888/api/flux-events?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NTA5Njk0NzksInN1YiI6ImFkbWluIiwidHlwZSI6InVzZXIifQ.9cWsObAnKHpeLJSINvUk1GLtGUqk1KQ7cePVl0JI_YY&env=celmafa
+  type: generic
+---
+apiVersion: notification.toolkit.fluxcd.io/v1beta1
+kind: Alert
+metadata:
+  name: notifications-dzsak-stack-test
+  namespace: flux-system
+spec:
+  eventSeverity: info
+  eventSources:
+  - kind: Kustomization
+    name: gitops-repo-dzsak-stack-test
+    namespace: flux-system
+  providerRef:
+    name: notifications-dzsak-stack-test
