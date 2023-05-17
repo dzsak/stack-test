@@ -1,0 +1,12 @@
+app: stack-test
+env: staging
+namespace: default
+chart:
+  name: https://github.com/gimlet-io/onechart.git?sha=4a217ce3d6cde684acfeede1a993ef93efe228b7&path=/charts/onechart
+values:
+  gitRepository: dzsak/stack-test
+  gitSha: '{{ .SHA }}'
+  replicas: 2
+strategicMergePatches: ""
+json6902Patches: []
+manifests: ""
